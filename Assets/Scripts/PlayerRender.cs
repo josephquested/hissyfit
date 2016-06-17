@@ -4,17 +4,17 @@ using UnityEngine.Networking;
 
 public class PlayerRender : NetworkBehaviour
 {
-	private SpriteRenderer renderer;
+	private SpriteRenderer spriteRenderer;
 
 	public Sprite[] sprites;
 
 	void Start ()
 	{
-		renderer = this.GetComponent<SpriteRenderer>();
+		spriteRenderer = this.GetComponent<SpriteRenderer>();
 	}
 
 	public void UpdateDirection (int direction)
 	{
-		renderer.sprite = sprites[direction];
+		spriteRenderer.sprite = sprites[direction];
 	}
 }

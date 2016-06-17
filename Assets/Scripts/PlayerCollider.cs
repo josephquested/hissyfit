@@ -13,7 +13,6 @@ public class PlayerCollider : NetworkBehaviour
 
 		if (collider.tag == "Egg")
 		{
-			print("hit an egg!");
 			EggCollision(collider.gameObject.GetComponent<Egg>());
 		}
 
@@ -23,7 +22,8 @@ public class PlayerCollider : NetworkBehaviour
 		}
 	}
 
-	void OnTriggerExit2D (Collider2D collider) {
+	void OnTriggerExit2D (Collider2D collider)
+	{
 		if (!isLocalPlayer)
 		{
 			return;
@@ -32,7 +32,6 @@ public class PlayerCollider : NetworkBehaviour
 		if (collider.tag == "Board")
 		{
 			SceneManager.LoadScene(0);
-			// transform.position = new Vector3(0, 0.5f, 0);
 		}
 	}
 
@@ -43,6 +42,6 @@ public class PlayerCollider : NetworkBehaviour
 
 	void TailEggCollision (Egg egg)
 	{
-		// SceneManager.LoadScene(0);
+		SceneManager.LoadScene(0);
 	}
 }
