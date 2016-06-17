@@ -95,8 +95,8 @@ public class PlayerMovement : NetworkBehaviour
 
 	public void UpdateSpeed ()
 	{
-		// float newSpeed = startingSpeed - (playerTail.eggs.Count / speedMultiplier);
-		// speed = newSpeed;
+		float newSpeed = startingSpeed - (speedMultiplier * playerTail.eggs.Count / 10);
+		speed = newSpeed;
 	}
 
 	public Vector3 PreviousPosition {
