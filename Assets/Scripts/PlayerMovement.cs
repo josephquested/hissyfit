@@ -6,7 +6,7 @@ using UnityEngine.Networking;
 public class PlayerMovement : NetworkBehaviour
 {
 	private PlayerTail playerTail;
-	private PlayerAnimator playerAnimator;
+	private PlayerRender playerRender;
 	private int direction;
 	private float speed;
 	private bool canTurn = true;
@@ -21,7 +21,7 @@ public class PlayerMovement : NetworkBehaviour
 	void Start ()
 	{
 		playerTail = this.GetComponent<PlayerTail>();
-		playerAnimator = this.GetComponent<PlayerAnimator>();
+		playerRender = this.GetComponent<PlayerRender>();
 		speed = startingSpeed;
 	}
 
@@ -90,13 +90,13 @@ public class PlayerMovement : NetworkBehaviour
 	void Turn (int newDirection)
 	{
 		direction = newDirection;
-		playerAnimator.UpdateDirection(direction);
+		playerRender.UpdateDirection(direction);
 	}
 
 	public void UpdateSpeed ()
 	{
-		float newSpeed = startingSpeed - (playerTail.eggs.Count / speedMultiplier);
-		speed = newSpeed;
+		// float newSpeed = startingSpeed - (playerTail.eggs.Count / speedMultiplier);
+		// speed = newSpeed;
 	}
 
 	public Vector3 PreviousPosition {

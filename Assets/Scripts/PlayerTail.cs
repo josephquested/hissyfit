@@ -18,7 +18,7 @@ public class PlayerTail : NetworkBehaviour {
 	public void UpdateEggs () {
 		foreach (Egg egg in eggs) {
 			egg.PreviousPosition = egg.transform.position;
-			Vector3 nextPosition = GetNextPositionForEgg(egg);
+			Vector2 nextPosition = GetNextPositionForEgg(egg);
 			egg.transform.position = nextPosition;
 		}
 	}

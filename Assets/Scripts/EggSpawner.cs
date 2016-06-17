@@ -9,25 +9,31 @@ public class EggSpawner : NetworkBehaviour {
 
 	public GameObject eggPrefab;
 	public GameObject preEggPrefab;
-	public Transform spawnTrans;
+	public int boardHeight;
+	public int boardWidth;
 	public float spawnRate;
 	public int maxEggs;
 
 	Vector3 RandomPosition ()
 	{
-		float yScale = spawnTrans.localScale.y / 2;
-		float xScale = spawnTrans.localScale.x / 2;
-    return new Vector3(Random.Range(-yScale, yScale), 0.5f, Random.Range(-xScale, xScale));
+		float xScale = boardWidth / 2;
+		float yScale = boardHeight / 2;
+    return new Vector2(
+			Mathf.Round(Random.Range(-xScale, xScale)),
+			Mathf.Round(Random.Range(-yScale, yScale))
+		);
 	}
 
 	public void SpawnPreEgg ()
 	{
+		print("spawning PRE egg");
 		Vector2 position = RandomPosition();
     Instantiate(preEggPrefab, position, Quaternion.identity);
 	}
 
 	public void SpawnEgg (Vector2 eggPosition)
 	{
+		print("spawning egg");
     Instantiate(eggPrefab, eggPosition, Quaternion.identity);
 	}
 

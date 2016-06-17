@@ -7,7 +7,7 @@ public class Egg : NetworkBehaviour
 {
   private PlayerTail tail;
 
-  [SerializeField] private Vector3 previousPosition;
+  [SerializeField] private Vector2 previousPosition;
 
   public void Pickup (GameObject player)
 	{
@@ -22,7 +22,7 @@ public class Egg : NetworkBehaviour
 		this.GetComponent<SpriteRenderer>().color = color;
 	}
 
-  public Vector3 PreviousPosition
+  public Vector2 PreviousPosition
 	{
 		get {
       return previousPosition;
