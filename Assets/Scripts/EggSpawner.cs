@@ -24,17 +24,29 @@ public class EggSpawner : NetworkBehaviour {
 		);
 	}
 
-	public void SpawnPreEgg ()
+	[Command]
+	public void CmdSpawnPreEgg ()
 	{
 		print("spawning PRE egg");
 		Vector2 position = RandomPosition();
-    Instantiate(preEggPrefab, position, Quaternion.identity);
+    var preEgg = (GameObject)Instantiate(
+			preEggPrefab,
+			position,
+			Quaternion.identity
+		);
+		NetworkServer.Spawn(preEgg);
 	}
 
-	public void SpawnEgg (Vector2 eggPosition)
+	[Command]
+	public void CmdSpawnEgg (Vector2 eggPosition)
 	{
 		print("spawning egg");
-    Instantiate(eggPrefab, eggPosition, Quaternion.identity);
+		var egg = (GameObject)Instantiate(
+			eggPrefab,
+			eggPosition,
+			Quaternion.identity
+		);
+		NetworkServer.Spawn(egg);
 	}
 
 	void Update ()
@@ -58,7 +70,7 @@ public class EggSpawner : NetworkBehaviour {
 			i += Time.deltaTime;
 		}
 
-		SpawnPreEgg();
+		CmdSpawnPreEgg();
 		breakSpawnCoroutine = false;
 		canSpawn = true;
 	}

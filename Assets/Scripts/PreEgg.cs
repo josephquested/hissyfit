@@ -25,17 +25,18 @@ public class PreEgg : NetworkBehaviour
 	void Update () {
 		if (initialFrame)
 		{
-			initialFrame = false; return;
+			initialFrame = false;
+			return;
 		}
 
 		if (inTrigger)
 		{
-			eggSpawner.SpawnPreEgg();
+			eggSpawner.CmdSpawnPreEgg();
 		}
 
 		else
 		{
-			eggSpawner.SpawnEgg(transform.position);
+			eggSpawner.CmdSpawnEgg(transform.position);
 		}
 
 		Destroy(gameObject);

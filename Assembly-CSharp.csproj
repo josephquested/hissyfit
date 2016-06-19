@@ -51,7 +51,6 @@
      <Compile Include="Assets\Scripts\PlayerCollider.cs" />
      <Compile Include="Assets\Scripts\PlayerInput.cs" />
      <Compile Include="Assets\Scripts\PlayerMovement.cs" />
-     <Compile Include="Assets\Scripts\PlayerRender.cs" />
      <Compile Include="Assets\Scripts\PlayerTail.cs" />
      <Compile Include="Assets\Scripts\PreEgg.cs" />
  <Reference Include="UnityEngine.UI">
