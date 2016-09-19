@@ -4,6 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "start": "nodemon index.js",
+    "watch": "watchify src/init.js -o public/bundle.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -16,5 +18,10 @@
   "bugs": {
     "url": "https://github.com/josephquested/hissyfit/issues"
   },
-  "homepage": "https://github.com/josephquested/hissyfit#readme"
+  "homepage": "https://github.com/josephquested/hissyfit#readme",
+  "dependencies": {
+    "express": "^4.14.0",
+    "nodemon": "^1.10.2",
+    "watchify": "^3.7.0"
+  }
 }
