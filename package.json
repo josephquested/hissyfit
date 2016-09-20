@@ -5,15 +5,14 @@
   "main": "index.js",
   "scripts": {
     "start": "nodemon index.js",
-    "watch": "watchify src/init.js -o public/bundle.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "watch": "watchify src/init.js -o public/bundle.js"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/josephquested/hissyfit.git"
   },
   "keywords": [],
-  "author": "",
+  "author": "josephquested",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/josephquested/hissyfit/issues"
